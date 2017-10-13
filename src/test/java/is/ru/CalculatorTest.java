@@ -34,4 +34,9 @@ public class CalculatorTest {
 	public void testNegative() {
 		StringCalculator.add("-1");
 	}
+	
+	@Test
+	public void testBiggerThan1k() {
+		assertEquals(2, StringCalculator.add("1001,2"));
+	}
 }

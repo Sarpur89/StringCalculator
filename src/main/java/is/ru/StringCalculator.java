@@ -32,7 +32,12 @@ public class StringCalculator {
 	private static int sum(String[] numbers) {
 		int total = 0;
 		for(String number : numbers) {
-			total += toInt(number);
+			if(toInt(number) > 1000) {
+				continue;
+			}
+			else {
+				total += toInt(number);
+			}
 		}
 		return total;
 	}
