@@ -10,10 +10,14 @@ public class StringCalculator {
 			if(text.contains(",")) {
 				text = replaceNewline(text);
 				String numbers[] = text.split(",");
+				String negativeNumbers = "";
 				for(String curr : numbers) {
 					if(toInt(curr) < 0) {
-						throw new IllegalArgumentException("Negatives not allowed");
+						negativeNumbers += curr + " ";
 					}
+				}
+				if(!negativeNumbers.equals("")) {
+					throw new IllegalArgumentException("Negatives not allowed" + negativeNumbers);
 				}
 				return sum(numbers);
 			}
