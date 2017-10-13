@@ -1,9 +1,7 @@
 package is.ru.stringcalculator;
 
 public class StringCalculator {
-	
-	private final String seperator = ",|\n";
-	
+		
 	public static int add(String text) {		
 		if(text.equals("")) {
 			return 0;
@@ -14,7 +12,7 @@ public class StringCalculator {
 				String numbers[] = text.split(",");
 				for(String curr : numbers) {
 					if(toInt(curr) < 0) {
-						throw new IllegalArgumentException("Input is a negative number");
+						throw new IllegalArgumentException("Negatives not allowed");
 					}
 				}
 				return sum(numbers);
@@ -39,12 +37,4 @@ public class StringCalculator {
 		String replace = numbers.replaceAll("\n", ",");
 		return replace;
 	}
-	
-	//private static void checkNegativeInput(String[] numbers) {
-		//for(String curr : numbers) {
-			//if(toInt(curr) < 0) {
-				//throw new Exception("Input is a negative number");
-			//}
-		//}
-	//}
 }
