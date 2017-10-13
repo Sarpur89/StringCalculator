@@ -1,13 +1,16 @@
-package is.ru.StringCalculator;
+package is.ru.stringcalculator;
 
-public class Calculator {
+public class StringCalculator {
 	
-	public static int add(String text) {
+	private final String seperator = ",|\n";
+	
+	public static int add(String text) {		
 		if(text.equals("")) {
 			return 0;
 		}
 		else {
 			if(text.contains(",")) {
+				text = replaceNewline(text);
 				String numbers[] = text.split(",");
 				return sum(numbers);
 			}
@@ -27,4 +30,8 @@ public class Calculator {
 		return total;
 	}
 	
+	private static String replaceNewline(String numbers) {
+		String replace = numbers.replaceAll("\n", ",");
+		return replace;
+	}
 }
