@@ -12,6 +12,11 @@ public class StringCalculator {
 			if(text.contains(",")) {
 				text = replaceNewline(text);
 				String numbers[] = text.split(",");
+				for(String curr : numbers) {
+					if(toInt(curr) < 0) {
+						throw new IllegalArgumentException("Input is a negative number");
+					}
+				}
 				return sum(numbers);
 			}
 			return 1;
@@ -34,4 +39,12 @@ public class StringCalculator {
 		String replace = numbers.replaceAll("\n", ",");
 		return replace;
 	}
+	
+	//private static void checkNegativeInput(String[] numbers) {
+		//for(String curr : numbers) {
+			//if(toInt(curr) < 0) {
+				//throw new Exception("Input is a negative number");
+			//}
+		//}
+	//}
 }

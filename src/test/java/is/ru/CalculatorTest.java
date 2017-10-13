@@ -29,4 +29,9 @@ public class CalculatorTest {
 	public void testNewLine() {
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
+	
+	@Test
+	public void testNegative() {
+		StringCalculator.add("-1");
+	}
 }
